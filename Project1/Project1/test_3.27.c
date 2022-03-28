@@ -57,7 +57,7 @@
 //	}
 //	return -1;
 //}
-//二分查找法,适用于有序数组
+/*二分查找法,适用于有序数组*/
 //int main() {
 //	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
 //	int k = 7;
@@ -74,4 +74,68 @@
 //	return 0;
 //}
 
+/*对&取地址的变量进行函数操作*/
+//案例把mun输出到3
+//C语言是面向过程编程,它是通过你需要什么它做什么,从上往下,所以当函数定义在主函数入口
+//前时可以不用声明即可调用,而放在后面的话需要需要声明该函数,再使用否则报错说函数未定义
+//void Add(int* p) {
+//	(*p)++;
+//}
+//void Add(int* p);//函数在主函数后方需要声明
+//int main() {
+//	int mun = 0;
+//	Add(&mun);//&地址
+//	printf("%d\n", mun);
+//	Add(&mun);
+//	printf("%d\n", mun);
+//	Add(&mun);
+//	printf("%d\n", mun);
+//	return 0;
+//}
 //
+//void Add(int* p) {//指针*
+//	(*p)++;
+//}
+
+
+/*函数嵌套调用*/
+//根据面向过程的原则,把函数定义在主函数的前方
+//void new_line() {
+//	printf("你好!\n");
+//}
+//void three_line() {
+//	for (int i = 0; i < 3; i++)
+//	{
+//		new_line();
+//	}
+//}
+//int main() {
+//	three_line();
+//	return 0;
+//}
+
+/*链式函数*/
+//把函数的回调作为参数再去调用另一个函数
+//int new_line(int x,int y) {
+//	int a = x*y;
+//	return a;
+//}
+//void text_line(int p) {
+//	printf("%d\n", p);
+//}
+//int main() {
+//	int a = 3;
+//	int b = 2;
+//	text_line(new_line(a, b));
+//	return 0;
+//}
+
+/*头文件的作用*/
+//头文件的作用是把方法声明在头文件内,然后通过#include即可调用头文件对应的函数
+//系统的方法是用<>,自定义的需要""
+//#include "add.h"
+//int main() {
+//	printf("%d\n", Add(20, 3));
+//	return 0;
+//}
+
