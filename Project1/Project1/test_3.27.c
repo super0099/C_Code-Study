@@ -139,3 +139,36 @@
 //	return 0;
 //}
 
+/*递归例子一,将一个庞大的代码简化成一个小的模块,递归的主要思考方式在于:大事化小*/
+//打印一个数1234,让他分别输出1,2,3,4
+//void print(int n) {
+//	if (n > 9) {
+//		print(n / 10);//调用自身,从最后的调用开始打印
+//	}
+//	printf("%d\n", n%10);
+//}
+//int main() {
+//	unsigned int num = 0;//无符号正数
+//	scanf("%d", &num);
+//	print(num);
+//	return 0;
+//}
+
+/*递归例子二*/
+//不使用sizeof()求出字符串长度
+int my_strlen(char* arr) {
+	int count = 0;
+	while (*arr != '\0')//''和""是有区别的
+	{
+		count++;
+		*arr++;
+	}
+	return count;
+}
+int main() {
+	char arr[] = "yangxiongming";
+	int len = my_strlen(arr);//arr是个数组,数组传参,传过去的不是整个数组,而是第一个元素的地址
+	printf("%d\n", len);
+	return 0;
+}
+
