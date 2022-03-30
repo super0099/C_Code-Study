@@ -156,19 +156,132 @@
 
 /*递归例子二*/
 //不使用sizeof()求出字符串长度
-int my_strlen(char* arr) {
-	int count = 0;
-	while (*arr != '\0')//''和""是有区别的
-	{
-		count++;
-		*arr++;
-	}
-	return count;
-}
+//int my_strlen(char* arr) {
+//	//''和""是有区别的,
+//	if (*arr != '\0') {
+//		printf("%d\n", arr);//
+//		printf("%d\n", *arr);//指针位置,用ASCII码表示
+//		return 1 + my_strlen(arr + 1);
+//	}
+//	else
+//	{
+//		return 0;
+//	}
+//}
+//int main() {
+//	char arr[] = "yangxiongming";
+//	int len = my_strlen(arr);//arr是个数组,数组传参,传过去的不是整个数组,而是第一个元素的地址
+//	printf("%d\n", len);
+//	return 0;
+//}
+
+/*递归例子三,求n的阶乘*/
+//循环例子
+//int Fac1(int n) {
+//	int i = 0;
+//	int ret = n;
+//	for (i = 1; i < ret;i++) {//5,10,30,120
+//		n *= i;
+//	}
+//	return n;
+//}
+//递归例子
+//int Fac(int n) {
+//	if (n>1) {
+//		return n*Fac(n-1);
+//	}
+//	else
+//	{
+//		return 1;
+//	}
+//}
+//int main() {
+//	int ret = 0;
+//	scanf("%d", &ret);
+//	//int count = Fac(ret);
+//	int count1 = Fac1(ret);
+//	//printf("%d\n", count);
+//	printf("%d\n", count1);
+//	return 0;
+//}
+
+/*递归例子四,求斐波那契数列*/
+//例子一
+//int fs(int n,int m,int k) {
+//	printf("%d,%d,", n, m);
+//	if (k<20) {
+//		k++;
+//		fs((n + m),m+ (n + m),k);
+//	}	
+//}
+//例子二,描述第n个斐波那契数
+//int fs(int n) {
+//	if (n<=2) {
+//		return 1;
+//	}
+//	else
+//	{
+//		return fs(n - 1) + fs(n -2);
+//	}
+//}
+//int main() {
+//	int left = 0;
+//	//int right = 1;
+//	//int ret = fs(left,right,1);
+//	scanf("%d", &left);
+//	int ret = fs(left);
+//	printf("%d,", ret);
+//	return 0;
+//}
+
+/*利用循环求出第n个斐波那契数*/
+//int fs(int n) {
+//	int a = 1;
+//	int b = 1;
+//	int c = 0;
+//	if (n > 2) {
+//		for (int i = 2; i < n; i++)
+//		{
+//			c = a + b;//第三个数等于第一个加上第二个
+//			a = b;
+//			b = c;
+//		}
+//	}
+//	else
+//	{
+//		c = 1;
+//	}	
+//	return c;
+//}
+//int main() {
+//	int a = 0;
+//	scanf("%d",&a);
+//	int b = fs(a);	
+//	printf("%d", b);
+//	return 0;
+//}
+
+
+/*数组认识*/
 int main() {
-	char arr[] = "yangxiongming";
-	int len = my_strlen(arr);//arr是个数组,数组传参,传过去的不是整个数组,而是第一个元素的地址
-	printf("%d\n", len);
-	return 0;
+	//字符数组
+	char arr1[] = "abcd";//已完成初始化数组
+	char arr2[5] = "abcde";//未完成初始化数组
+	char arr3[] = { 'a','b','c' };//已完成初始化数组
+	char arr4[] = { 'a','b','c',98 };//其中的98会被转成ASCII编码对应的值
+	//他们的长度和大小各不相同
+	//未设置数组大小
+	printf("%d,", sizeof(arr1));//查看字符数组大小,由于字符串的结束标志是\0;\0也占用一个字符但是它不进行显示
+	printf("%d", strlen(arr1));//查看字符数组长度,由于\0是结束标志 ,但是它不进行显示,所以长度就是所初始化字符串时的个数
+	//已设置数组大小
+	printf("\n");
+	printf("%d,", sizeof(arr2));//因为初始化时为5个字符大小,又因为字符正好5个,所以它的大小正好把数组填充满
+	printf("%d", strlen(arr2));//因为字符串长度结束\0,又因为当前字符串没有\0,所以它的长度为随机值
+	//已初始化数组,和上面一致
+	printf("\n");
+	printf("%d,", sizeof(arr3));
+	printf("%d", strlen(arr3));
 }
+
+
 
