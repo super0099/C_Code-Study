@@ -1,26 +1,8 @@
-﻿生成启动时间为 2022/3/29 16:20:05。
+﻿生成启动时间为 2022/3/31 16:49:48。
      1>项目“C:\Users\super007\Desktop\C语言初识\Project1\Project1\Project1.vcxproj”在节点 2 上(Build 个目标)。
-     1>ClCompile:
-         D:\vs\VC\bin\x86_amd64\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc140.pdb" /Gd /TC /errorReport:prompt test_3.27.c
-         test_3.27.c
-     1>c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(274): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
-         c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(274): note: consider using '%zd' in the format string
-     1>c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(275): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
-         c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(275): note: consider using '%zd' in the format string
-     1>c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(278): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
-         c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(278): note: consider using '%zd' in the format string
-     1>c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(279): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
-         c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(279): note: consider using '%zd' in the format string
-     1>c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(282): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
-         c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(282): note: consider using '%zd' in the format string
-     1>c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(283): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'size_t'
-         c:\users\super007\desktop\c语言初识\project1\project1\test_3.27.c(283): note: consider using '%zd' in the format string
-       Link:
-         D:\vs\VC\bin\x86_amd64\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\super007\Desktop\C语言初识\Project1\x64\Debug\Project1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /Debug /PDB:"C:\Users\super007\Desktop\C语言初识\Project1\x64\Debug\Project1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\super007\Desktop\C语言初识\Project1\x64\Debug\Project1.lib" /MACHINE:X64 x64\Debug\add.obj
-         x64\Debug\test_3.27.obj
-         Project1.vcxproj -> C:\Users\super007\Desktop\C语言初识\Project1\x64\Debug\Project1.exe
-     1>已完成生成项目“C:\Users\super007\Desktop\C语言初识\Project1\Project1\Project1.vcxproj”(Build 个目标)的操作。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140\Microsoft.Cpp.Platform.targets(57,5): error MSB8020: The build tools for v142 (Platform Toolset = 'v142') cannot be found. To build using the v142 build tools, please install v142 build tools.  Alternatively, you may upgrade to the current Visual Studio tools by selecting the Project menu or right-click the solution, and then selecting "Retarget solution".
+     1>已完成生成项目“C:\Users\super007\Desktop\C语言初识\Project1\Project1\Project1.vcxproj”(Build 个目标)的操作 - 失败。
 
-已成功生成。
+生成失败。
 
-已用时间 00:00:00.80
+已用时间 00:00:00.01

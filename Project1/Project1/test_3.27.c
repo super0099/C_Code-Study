@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-#include <stdio.h>
+
 #include <string.h>
 //函数的认识,C函数库
 //int main() {
@@ -263,24 +263,131 @@
 
 
 /*数组认识*/
+//int main() {
+//	//字符数组
+//	char arr1[] = "abcd";//已完成初始化数组
+//	char arr2[5] = "abcde";//未完成初始化数组
+//	char arr3[] = { 'a','b','c' };//已完成初始化数组
+//	char arr4[] = { 'a','b','c',98 };//其中的98会被转成ASCII编码对应的值
+//	//他们的长度和大小各不相同
+//	//未设置数组大小
+//	printf("%d,", sizeof(arr1));//查看字符数组大小,由于字符串的结束标志是\0;\0也占用一个字符但是它不进行显示
+//	printf("%d", strlen(arr1));//查看字符数组长度,由于\0是结束标志 ,但是它不进行显示,所以长度就是所初始化字符串时的个数
+//	//已设置数组大小
+//	printf("\n");
+//	printf("%d,", sizeof(arr2));//因为初始化时为5个字符大小,又因为字符正好5个,所以它的大小正好把数组填充满
+//	printf("%d", strlen(arr2));//因为字符串长度结束\0,又因为当前字符串没有\0,所以它的长度为随机值
+//	//已初始化数组,和上面一致
+//	printf("\n");
+//	printf("%d,", sizeof(arr3));
+//	printf("%d", strlen(arr3));
+//}
+
+/*二维数组*/
+//int main() {
+//	int arr[3][4] = { {1,2,3,4},{5,6,7,8},{9,10,11,12} };
+//	return 0;
+//}
+
+/*冒泡函数把数组变成升序*/
+//int maopao(int arr[],int size) {
+//	for (int i = 0; i < size-1; i++)
+//	{
+//		for (int a = 0; a < size - 1 - i;a++) {
+//			if (arr[a]>arr[a+1]) {
+//				int tmp = arr[a];
+//				arr[a] = arr[a + 1];
+//				arr[a + 1] = tmp;
+//			}
+//		}
+//	}
+//}
+//int main() {
+//	int arr[10] = { 9,8,7,6,5,4,3,2,1,0 };
+//	int size = sizeof(arr) / sizeof(arr[0]);
+//	maopao(arr, size);
+//	for (int i = 0; i < size; i++) {
+//		printf("%d", arr[i]);
+//	}
+//	return 0;
+//}
+
+#include "game.h"
+/*三字棋游戏*/
+
+void mun() {
+	printf("**************************************\n");
+	printf("**************************************\n");
+	printf("******1.开始游戏   2.离开游戏*********\n");
+	printf("**************************************\n");
+	printf("**************************************\n");
+}
+
+void game() {
+	char test = 0;
+	//创建一个二维数组,描述玩家走出的棋盘信息
+	char board[ROW][COL] = {0};
+	//初始化棋盘
+	InitBoard(board,ROW,COL);
+	//打印棋盘
+	DisplayBoard(board, ROW, COL);
+	//下棋
+	while (1)
+	{
+		//玩家下棋
+		PlayerMove(board, ROW, COL);
+		//再打印
+		DisplayBoard(board, ROW, COL);
+		//结束游戏
+		test = IsWin(board, ROW, COL);
+		if (test != "C") {
+			break;
+		}
+		//电脑下棋
+		ComputerMove(board, ROW, COL);
+		//再打印
+		DisplayBoard(board, ROW, COL);	
+		//结束游戏
+		test = IsWin(board, ROW, COL);
+		if (test != "C") {
+			break;
+		}
+	}
+	if (test == '*') {
+		printf("玩家赢\n");
+	}
+	else if (test == '#') {
+		printf("电脑赢\n");
+	}
+	else if (test == 'Q') {
+		printf("平局\n");
+	}
+}
+void test() {
+	int input = 0;
+	srand((unsigned int)time(NULL));
+	do {
+		mun();
+		printf("请选择!");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case 1:
+			printf("开始三子棋游戏\n");
+			game();
+			break;
+		case 0:
+			printf("退出三子棋游戏\n");
+			break;
+		default:
+			printf("错误选择\n");
+			break;
+		}
+	} while (input);
+}
 int main() {
-	//字符数组
-	char arr1[] = "abcd";//已完成初始化数组
-	char arr2[5] = "abcde";//未完成初始化数组
-	char arr3[] = { 'a','b','c' };//已完成初始化数组
-	char arr4[] = { 'a','b','c',98 };//其中的98会被转成ASCII编码对应的值
-	//他们的长度和大小各不相同
-	//未设置数组大小
-	printf("%d,", sizeof(arr1));//查看字符数组大小,由于字符串的结束标志是\0;\0也占用一个字符但是它不进行显示
-	printf("%d", strlen(arr1));//查看字符数组长度,由于\0是结束标志 ,但是它不进行显示,所以长度就是所初始化字符串时的个数
-	//已设置数组大小
-	printf("\n");
-	printf("%d,", sizeof(arr2));//因为初始化时为5个字符大小,又因为字符正好5个,所以它的大小正好把数组填充满
-	printf("%d", strlen(arr2));//因为字符串长度结束\0,又因为当前字符串没有\0,所以它的长度为随机值
-	//已初始化数组,和上面一致
-	printf("\n");
-	printf("%d,", sizeof(arr3));
-	printf("%d", strlen(arr3));
+	test();
+	return 0;
 }
 
 
