@@ -314,81 +314,80 @@
 
 #include "game.h"
 /*三字棋游戏*/
-
-void mun() {
-	printf("**************************************\n");
-	printf("**************************************\n");
-	printf("******1.开始游戏   2.离开游戏*********\n");
-	printf("**************************************\n");
-	printf("**************************************\n");
-}
-
-void game() {
-	char test = 0;
-	//创建一个二维数组,描述玩家走出的棋盘信息
-	char board[ROW][COL] = {0};
-	//初始化棋盘
-	InitBoard(board,ROW,COL);
-	//打印棋盘
-	DisplayBoard(board, ROW, COL);
-	//下棋
-	while (1)
-	{
-		//玩家下棋
-		PlayerMove(board, ROW, COL);
-		//再打印
-		DisplayBoard(board, ROW, COL);
-		//结束游戏
-		test = IsWin(board, ROW, COL);
-		if (test != "C") {
-			break;
-		}
-		//电脑下棋
-		ComputerMove(board, ROW, COL);
-		//再打印
-		DisplayBoard(board, ROW, COL);	
-		//结束游戏
-		test = IsWin(board, ROW, COL);
-		if (test != "C") {
-			break;
-		}
-	}
-	if (test == '*') {
-		printf("玩家赢\n");
-	}
-	else if (test == '#') {
-		printf("电脑赢\n");
-	}
-	else if (test == 'Q') {
-		printf("平局\n");
-	}
-}
-void test() {
-	int input = 0;
-	srand((unsigned int)time(NULL));
-	do {
-		mun();
-		printf("请选择!");
-		scanf("%d", &input);
-		switch (input)
-		{
-		case 1:
-			printf("开始三子棋游戏\n");
-			game();
-			break;
-		case 0:
-			printf("退出三子棋游戏\n");
-			break;
-		default:
-			printf("错误选择\n");
-			break;
-		}
-	} while (input);
-}
-int main() {
-	test();
-	return 0;
-}
+//void mun() {
+//	printf("**************************************\n");
+//	printf("**************************************\n");
+//	printf("******1.开始游戏   2.离开游戏*********\n");
+//	printf("**************************************\n");
+//	printf("**************************************\n");
+//}
+//
+//void game() {
+//	char test = 0;
+//	//创建一个二维数组,描述玩家走出的棋盘信息
+//	char board[ROW][COL] = {0};
+//	//初始化棋盘
+//	InitBoard(board,ROW,COL);
+//	//打印棋盘
+//	DisplayBoard(board, ROW, COL);
+//	//下棋
+//	while (1)
+//	{
+//		//玩家下棋
+//		PlayerMove(board, ROW, COL);
+//		//再打印
+//		DisplayBoard(board, ROW, COL);
+//		//结束游戏
+//		test = IsWin(board, ROW, COL);
+//		if (test == 'C') {
+//			break;
+//		}
+//		//电脑下棋
+//		ComputerMove(board, ROW, COL);
+//		//再打印
+//		DisplayBoard(board, ROW, COL);	
+//		//结束游戏
+//		test = IsWin(board, ROW, COL);
+//		if (test == 'C') {
+//			break;
+//		}
+//	}
+//	if (test == '*') {
+//		printf("玩家赢\n");
+//	}
+//	else if (test == '#') {
+//		printf("电脑赢\n");
+//	}
+//	else if (test == 'Q') {
+//		printf("平局\n");
+//	}
+//}
+//void test() {
+//	int input = 0;
+//	srand((unsigned int)time(NULL));
+//	do {
+//		mun();
+//		printf("请选择!");
+//		scanf("%d", &input);
+//		switch (input)
+//		{
+//		case 1:
+//			printf("开始三子棋游戏\n");
+//			game();
+//			break;
+//		case 0:
+//			printf("退出三子棋游戏\n");
+//			break;
+//		default:
+//			printf("错误选择\n");
+//			break;
+//		}
+//	} while (input);
+//}
+//int main() {
+//	test();
+//	return 0;
+//}
 
 
 

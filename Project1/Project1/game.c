@@ -14,6 +14,18 @@ void InitBoard(char board[ROW][COL], int row, int col) {
 //2.电脑赢 = "#"
 //3.平局 = "Q"
 //4.继续 = "C"
+int isFull(char board[ROW][COL], int row, int col) {
+	for (int i = 0; i < row; i++)
+	{
+		for (int j = 0; j < col; j++)
+		{
+			if (board[i][j] == 0) {
+				return 0;
+			}
+		}
+	}
+	return 1;
+}
 char IsWin(char board[ROW][COL], int row, int col) {
 	//横三列
 	for (int i = 0; i < row; i++)
@@ -36,6 +48,10 @@ char IsWin(char board[ROW][COL], int row, int col) {
 	//右斜三列
 	if (board[0][2] == board[1][1] && board[1][1] == board[2][0] && board[0][2] != 0) {
 		return board[0][2];
+	}
+	//判断平局
+	if (1 == isFull(board, row, col)) {
+		return 'Q';
 	}
 }
 void ComputerMove(char board[ROW][COL], int row, int col) {
