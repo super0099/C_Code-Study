@@ -24,6 +24,9 @@
     <ClCompile Include="game.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="test4.1.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="add.h">

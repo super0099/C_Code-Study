@@ -124,6 +124,7 @@
   <ItemGroup>
     <ClCompile Include="add.c" />
     <ClCompile Include="game.c" />
+    <ClCompile Include="test4.1.c" />
     <ClCompile Include="test_3.27.c" />
   </ItemGroup>
   <ItemGroup>
