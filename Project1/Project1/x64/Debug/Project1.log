@@ -1,2 +1,3 @@
-﻿  test4.1.c
+﻿  test4.2.c
+C:\Users\super007\Desktop\C语言初识\Project1\Project1\test4.2.c(21): warning C4172: 返回局部变量或临时变量的地址: a
   Project1.vcxproj -> C:\Users\super007\Desktop\C语言初识\Project1\x64\Debug\Project1.exe
