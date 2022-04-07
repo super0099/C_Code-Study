@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include <stdio.h>
+#include <string.h>
 /*指针*/
 //int main() {
 //	//1.指针是什么:指针是指向内存空间的地址
@@ -124,20 +125,102 @@
 //}
 
 /*指针数组*/
-int main() {
-	int a = 10;
-	int b = 20;
-	int c = 30;
-	int* pa = &a;
-	int* pb = &b;
-	int* pc = &c;
-	//如何把整形的指针存放到数组中呢
-	int* arr[3] = { pa,pb,pc };
-	for (int i = 0; i < 3; i++)
-	{
-		printf("%p\n", arr[i]);
-	}
-	return 0;
-}
+//int main() {
+//	int a = 10;
+//	int b = 20;
+//	int c = 30;
+//	int* pa = &a;
+//	int* pb = &b;
+//	int* pc = &c;
+//	//如何把整形的指针存放到数组中呢
+//	int* arr[3] = { pa,pb,pc };
+//	for (int i = 0; i < 3; i++)
+//	{
+//		printf("%p\n", arr[i]);
+//	}
+//	return 0;
+//}
+
+/*练习题*/
+//输入一个数打印出1直到这个数的乘法表
+//int main() {
+//	int a = 0;
+//	scanf("%d", &a);
+//	for (int i = 1; i < a+1; i++)
+//	{
+//		for (int j = i; j < a+1; j++)
+//		{
+//			printf("%d ", i * j);
+//		}
+//		printf("\n");
+//	}
+//}
+//
+
+//将字符串逆序,不使用库函数
+//int main() {
+//	char arr[] = "abcdefg";
+//	int left = 0;
+//	int right = strlen(arr)-1;
+//	while (left<right)
+//	{
+//		char tmp = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = tmp;
+//		left++;
+//		right--;
+//	}
+//	for (int i = 0; i < 7; i++)
+//	{
+//		printf("%c ", arr[i]);
+//	}
+//}
+
+
+//递归实现字符串逆序
+//int string_lenght(char* arr) {
+//	int str = 0;
+//	while (arr[str]!='\0')
+//	{
+//		str++;
+//	}
+//	return str;
+//}
+//void reverse_string(char* arr) {
+//	char tmp = arr[0];
+//	int len = string_lenght(arr);
+//	arr[0] = arr[len - 1];
+//	//\0的目的是缩小数组长度
+//	arr[len - 1] = '\0';
+//	//指针加一就是缩小一位
+//	if (string_lenght(arr + 1) >= 2)
+//		reverse_string(arr+1);
+//	//把\0代替为开始值,目的是回复数组长度
+//	arr[len - 1] = tmp;
+//}
+//int main() {
+//	char arr[] = "abcdefg";
+//	reverse_string(arr);
+//	printf("%s", arr);
+//	return 0;
+//}
+
+//练习题输入一个数,然后算出他们的位数相加之和
+//int DigitSum(int a) {
+//	if (a>9)
+//	{
+//		return DigitSum(a/10) + a % 10;
+//	}
+//	else
+//	{
+//		return a;
+//	}
+//}
+//int main() {
+//	int a = 0;
+//	scanf("%d", &a);
+//	int ret = DigitSum(a);
+//	printf("%d", ret);
+//}
 
 
